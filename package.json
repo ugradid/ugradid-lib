@@ -1,0 +1,34 @@
+{
+  "name": "ugradid-lib",
+  "version": "0.1.0",
+  "description": "Unified library for interacting with the ugradid identity solution",
+  "main": "js/index.js",
+  "files": [
+    "js/"
+  ],
+  "typings": "js/index.d.ts",
+  "husky": {
+    "hooks": {}
+  },
+  "scripts": {
+    "test": "nyc --reporter=lcov --reporter=text-summary mocha --exit",
+    "clean": "rm -rf ./js",
+    "prepublish": "yarn clean; yarn build",
+    "build": "tsc -p .",
+    "build:watch": "tsc -w -p .",
+    "test:watch": "mocha -w ./tests/**/*.test.ts",
+    "test:debug": "mocha --inspect -w ./tests/**/*.test.ts",
+    "test:integration": "nyc mocha --require ts-node/register ./tests/**/*.integration.ts --exit",
+    "format": "eslint --fix --ext .ts ./ts",
+    "generate-api-docs": "typedoc ./ts"
+  },
+  "dependencies": {
+    "@types/node": "^16.11.11",
+    "class-transformer": "0.3.1",
+    "create-hash": "^1.2.0",
+    "jsonld": "^1.6.1",
+    "node-fetch": "^2.6.1",
+    "rfc4648": "^1.5.0",
+    "ts-node": "^10.4.0"
+  }
+}

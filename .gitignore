@@ -1,0 +1,12 @@
+.idea
+.DS_Store
+yarn-error.log
+.nyc_output
+coverage
+js/**/*.js
+node_modules
+*.map
+.vs
+.vscode
+docs/_build
+docs/_themes
